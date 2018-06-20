@@ -1,5 +1,6 @@
 package com.example.chemlleijoseph.myapplication.fragments;
 
+import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -12,8 +13,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.chemlleijoseph.myapplication.AdvanceListViewActivity;
+import com.example.chemlleijoseph.myapplication.AdvanceViewPagerActivity;
 import com.example.chemlleijoseph.myapplication.MainListAdapter;
 import com.example.chemlleijoseph.myapplication.NinePatchActivity;
+import com.example.chemlleijoseph.myapplication.NotificationActivity;
 import com.example.chemlleijoseph.myapplication.R;
 import com.example.chemlleijoseph.myapplication.ScaleTypeActivity;
 import com.example.chemlleijoseph.myapplication.ViewPagerActivity;
@@ -54,7 +58,9 @@ public class DemoFragment extends Fragment {
         list.add("ViewPager");
         list.add("ImageScaleType");
         list.add("9Patch");
-        list.add("A");
+        list.add("Notification");
+        list.add("AdvancedListView");
+        list.add("AdvancedViewPager");
         list.add("B");
         list.add("C");
         list.add("D");
@@ -114,6 +120,18 @@ public class DemoFragment extends Fragment {
                     case 2:
                         Intent intent6 = new Intent(getActivity(), NinePatchActivity.class);
                         startActivity(intent6);
+                        break;
+                    case 3:
+                        Intent intent3 = new Intent(getActivity(), NotificationActivity.class);
+                        startActivity(intent3);
+                        break;
+                    case 4:
+                        Intent intent4 = new Intent(getActivity(), AdvanceListViewActivity.class);
+                        startActivity(intent4);
+                        break;
+                    case 5:
+                        Intent intent5 = new Intent(getActivity(), AdvanceViewPagerActivity.class);
+                        startActivity(intent5);
                         break;
                     default:
                 }

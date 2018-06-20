@@ -3,11 +3,13 @@ package com.example.chemlleijoseph.myapplication.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.chemlleijoseph.myapplication.R;
+import com.example.chemlleijoseph.myapplication.util.UtilLog;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,6 +56,7 @@ public class RedFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        UtilLog.d("Fragment", "Red:OnCreate");
     }
 
     @Override
@@ -63,4 +66,33 @@ public class RedFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_red, container, false);
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        UtilLog.d("Fragment", "Red:OnStart");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        UtilLog.d("Fragment", "Red:OnResume");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        UtilLog.d("Fragment", "Red:OnPause");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        UtilLog.d("Fragment", "Red:OnStop");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        UtilLog.d("Fragment", "Red:OnDestroy");
+    }
 }
