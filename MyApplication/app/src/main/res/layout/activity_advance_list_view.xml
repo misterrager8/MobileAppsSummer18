@@ -8,7 +8,8 @@
     tools:context=".AdvanceListViewActivity">
     
     <ListView
-        android:id="@+id/activity_advance_list_view"
+        android:id="@+id/adv_lv"
+        android:divider="@null"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
 

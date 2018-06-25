@@ -1,6 +1,7 @@
 package com.example.chemlleijoseph.myapplication.adapter;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,21 +9,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.chemlleijoseph.myapplication.R;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 public class AdvanceListViewAdapter extends BaseAdapter {
 
-    private final Context context;
+    private Context context;
     private final LayoutInflater inflater;
-    private ArrayList<String> list;
+    private final List<String> list;
 
-    public AdvanceListViewAdapter(Context context, ArrayList<String> list){
+    public AdvanceListViewAdapter(Context context, List<String> list) {
         this.context = context;
         this.list = list;
-        inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
@@ -32,7 +38,7 @@ public class AdvanceListViewAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return position;
+        return list.get(position);
     }
 
     @Override
@@ -42,30 +48,31 @@ public class AdvanceListViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Log.d("ViewHolder", "getView");
-        RecyclerView.ViewHolder viewHolder;
-        if (convertView == null){
-            Log.d("ViewHolder", "getView");
-            convertView = inflater.inflate(R.layout.activity_advance, parent, false);
-            //viewHolder = new RecyclerView.ViewHolder();
-            //viewHolder.rl_odd = (RelativeLayout) convertView.findViewById(R.id.odd);
-            //viewHolder.rl_even = (RelativeLayout) convertView.findViewById(R.id.even);
-           // convertView.setTag(viewHolder);
-        }else{
-            viewHolder = (RecyclerView.ViewHolder)convertView.getTag();
+        ViewHolder holder = new ViewHolder();
+        if (convertView == null) {
+            convertView = inflater.inflate(R.layout.item_adv_listview, parent, false);
+            TextView textLeft = convertView.findViewById(R.id.item_adv_left_tv);
+            TextView textRight = convertView.findViewById(R.id.item_adv_right_tv);
+            holder.textLeft = textLeft;
+            holder.textRight = textRight;
+            convertView.setTag(holder);
+        }
+        holder = (ViewHolder) convertView.getTag();
+        holder.textLeft.setText(list.get(position));
+        holder.textRight.setText(list.get(position));
 
+        if (position % 2 == 0) {
+            holder.textLeft.setVisibility(View.VISIBLE);
+            holder.textRight.setVisibility(View.INVISIBLE);
+        } else {
+            holder.textLeft.setVisibility(View.INVISIBLE);
+            holder.textRight.setVisibility(View.VISIBLE);
         }
-        if (position%2 ==0){
-           // viewHolder.rl_odd.setVisibility(View.INVISIBLE);
-           // viewHolder.rl_even.setVisibility(View.VISIBLE);
-        }else{
-           // viewHolder.rl_odd.setVisibility(View.VISIBLE);
-           // viewHolder.rl_even.setVisibility(View.INVISIBLE);
-        }
+
         return convertView;
     }
-    private class ViewHolder{
-        RelativeLayout rl_odd;
-        RelativeLayout rl_even;
+    public class ViewHolder{
+        TextView textLeft;
+        TextView textRight;
     }
 }

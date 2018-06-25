@@ -1,11 +1,13 @@
 package com.example.chemlleijoseph.myapplication;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ public class NotificationActivity extends BaseActivity {
 
     private NotificationManager manager;
     private int notifyId = 100;
+    private final String channelId = "EXAMPLE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,23 @@ public class NotificationActivity extends BaseActivity {
 
     @OnClick(R.id.activity_notification_small)
     public void smallNotification(View v){
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, channelId);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+
+            CharSequence name = "my_channel";
+            String Description = "This is my channel";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = new NotificationChannel(channelId, name, importance);
+            mChannel.setDescription(Description);
+            mChannel.enableLights(true);
+            mChannel.setLightColor(Color.RED);
+            mChannel.enableVibration(true);
+            mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+            mChannel.setShowBadge(false);
+            manager.createNotificationChannel(mChannel);
+        }
+
         mBuilder.setContentTitle("Title")
                 .setContentText("Text")
                 .setContentIntent(getDefaultIntent(Notification.FLAG_AUTO_CANCEL))
@@ -54,7 +73,23 @@ public class NotificationActivity extends BaseActivity {
 
     @OnClick(R.id.activity_notification_pic)
     public void picNotification(View v){
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, channelId);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+
+            CharSequence name = "my_channel";
+            String Description = "This is my channel";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = new NotificationChannel(channelId, name, importance);
+            mChannel.setDescription(Description);
+            mChannel.enableLights(true);
+            mChannel.setLightColor(Color.RED);
+            mChannel.enableVibration(true);
+            mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+            mChannel.setShowBadge(false);
+            manager.createNotificationChannel(mChannel);
+        }
+
         mBuilder.setContentTitle("Title")
                 .setContentText("Text")
                 .setContentIntent(getDefaultIntent(Notification.FLAG_AUTO_CANCEL))

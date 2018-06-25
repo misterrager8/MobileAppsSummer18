@@ -1,12 +1,10 @@
 package com.example.chemlleijoseph.myapplication.fragments;
 
-import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +13,17 @@ import android.widget.ListView;
 
 import com.example.chemlleijoseph.myapplication.AdvanceListViewActivity;
 import com.example.chemlleijoseph.myapplication.AdvanceViewPagerActivity;
+import com.example.chemlleijoseph.myapplication.DialogActivity;
+import com.example.chemlleijoseph.myapplication.IntentAndBundleActivity;
 import com.example.chemlleijoseph.myapplication.MainListAdapter;
 import com.example.chemlleijoseph.myapplication.NinePatchActivity;
 import com.example.chemlleijoseph.myapplication.NotificationActivity;
 import com.example.chemlleijoseph.myapplication.R;
+import com.example.chemlleijoseph.myapplication.RadioGroupActivity;
 import com.example.chemlleijoseph.myapplication.ScaleTypeActivity;
 import com.example.chemlleijoseph.myapplication.ViewPagerActivity;
+import com.example.chemlleijoseph.myapplication.CheckBoxActivity;
+import com.example.chemlleijoseph.myapplication.bean.Base;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,12 +64,10 @@ public class DemoFragment extends Fragment {
         list.add("Notification");
         list.add("AdvancedListView");
         list.add("AdvancedViewPager");
-        list.add("B");
-        list.add("C");
-        list.add("D");
-        list.add("E");
-        list.add("F");
-        list.add("G");
+        list.add("Dialogs");
+        list.add("RadioGroup");
+        list.add("CheckBox");
+        list.add("Intent & Bundle");
     }
 
     /**
@@ -118,8 +119,8 @@ public class DemoFragment extends Fragment {
                         startActivity(intent1);
                         break;
                     case 2:
-                        Intent intent6 = new Intent(getActivity(), NinePatchActivity.class);
-                        startActivity(intent6);
+                        Intent intent2 = new Intent(getActivity(), NinePatchActivity.class);
+                        startActivity(intent2);
                         break;
                     case 3:
                         Intent intent3 = new Intent(getActivity(), NotificationActivity.class);
@@ -133,7 +134,31 @@ public class DemoFragment extends Fragment {
                         Intent intent5 = new Intent(getActivity(), AdvanceViewPagerActivity.class);
                         startActivity(intent5);
                         break;
-                    default:
+                    case 6:
+                        Intent intent6 = new Intent(getActivity(), DialogActivity.class);
+                        startActivity(intent6);
+                        break;
+                    case 7:
+                        Intent intent7 = new Intent(getActivity(), RadioGroupActivity.class);
+                        startActivity(intent7);
+                        break;
+                    case 8:
+                        Intent intent8 = new Intent(getActivity(), CheckBoxActivity.class);
+                        startActivity(intent8);
+                        break;
+                    case 9:
+                        Intent intent9 = new Intent(getActivity(), IntentAndBundleActivity.class);
+                        intent9.putExtra("Msg", "Say Hello");
+                        intent9.putExtra("No", 10);
+                        Base newBase = new Base();
+                        newBase.setName("Chemllei");
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("B_Msg", 100);
+                        bundle.putString("B_Msg", "FromBundle");
+                        bundle.putSerializable("Base", newBase);
+                        intent9.putExtra("B", bundle);
+                        startActivity(intent9);
+                        default:
                 }
             }
         });
