@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.inTheatersFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="145dp"
+        android:layout_height="191dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/imageButton3"
+        android:layout_marginBottom="40dp"
+        android:contentDescription="TODO"
+        android:src="@android:color/holo_blue_dark"
+        android:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="145dp"
+        android:layout_height="191dp"
+        android:layout_alignStart="@+id/imageButton2"
+        android:layout_alignTop="@+id/imageButton"
+        android:contentDescription="TODO"
+        android:src="@android:color/holo_blue_dark"
+        android:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="145dp"
+        android:layout_height="191dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/imageButton2"
+        android:layout_marginStart="34dp"
+        android:contentDescription="TODO"
+        android:src="@android:color/holo_blue_dark" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="145dp"
+        android:layout_height="191dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="34dp"
+        android:layout_marginTop="123dp"
+        android:contentDescription="TODO"
+        android:src="@android:color/holo_blue_dark" />
+
+    <Button
+        android:id="@+id/filterGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageButton"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="41dp"
+        android:text="Filter Genre" />
+
+    <Button
+        android:id="@+id/filterRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/imageButton4"
+        android:layout_alignTop="@+id/filterGenre"
+        android:text="Filter Rating" />
+
+
+</RelativeLayout>

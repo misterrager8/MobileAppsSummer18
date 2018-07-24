@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.comingSoonFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:id="@+id/filterGenre2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageButton5"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="41dp"
+        android:text="Filter Genre" />
+
+    <Button
+        android:id="@+id/filterRating2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/imageButton7"
+        android:layout_alignTop="@+id/filterGenre2"
+        android:text="Filter Rating" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="145dp"
+        android:layout_height="191dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/imageButton6"
+        android:layout_marginBottom="39dp"
+        android:contentDescription="TODO"
+        android:src="@android:color/holo_blue_dark" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="145dp"
+        android:layout_height="191dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/imageButton7"
+        android:layout_marginStart="34dp"
+        android:contentDescription="TODO"
+        android:src="@android:color/holo_blue_dark" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="145dp"
+        android:layout_height="191dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="35dp"
+        android:layout_marginTop="123dp"
+        android:contentDescription="TODO"
+        android:src="@android:color/holo_blue_dark" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="145dp"
+        android:layout_height="191dp"
+        android:layout_alignStart="@+id/imageButton7"
+        android:layout_alignTop="@+id/imageButton5"
+        android:contentDescription="TODO"
+        android:src="@android:color/holo_blue_dark" />
+</RelativeLayout>

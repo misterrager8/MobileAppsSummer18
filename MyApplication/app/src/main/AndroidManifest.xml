@@ -29,7 +29,11 @@
         <activity android:name=".RadioGroupActivity" />
         <activity android:name=".CheckBoxActivity" />
         <activity android:name=".DialogActivity" />
-        <activity android:name=".IntentAndBundleActivity"></activity>
+        <activity android:name=".IntentAndBundleActivity" />
+        <activity android:name=".HandlerActivity" />
+        <activity android:name=".AnimatorActivity" />
+        <activity android:name=".AnimationActivity" />
+        <activity android:name=".GestureActivity"></activity>
     </application>
 
 </manifest>

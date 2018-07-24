@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnimationActivity"
+    android:orientation="vertical">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <Button
+            android:id="@+id/activity_animation_alpha"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="alpha"
+            android:textAllCaps="false"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/activity_animation_scale"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="scale"
+            android:textAllCaps="false"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/activity_animation_rotate"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="rotate"
+            android:textAllCaps="false"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/activity_animation_trans"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="trans"
+            android:textAllCaps="false"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/activity_animation_set"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="set"
+            android:textAllCaps="false"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/activity_animation_tv"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:text="Animation"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:textSize="50sp"
+        android:background="@android:color/holo_blue_light"/>
+
+</LinearLayout>

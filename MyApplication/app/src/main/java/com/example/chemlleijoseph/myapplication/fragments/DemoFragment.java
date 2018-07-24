@@ -13,7 +13,11 @@ import android.widget.ListView;
 
 import com.example.chemlleijoseph.myapplication.AdvanceListViewActivity;
 import com.example.chemlleijoseph.myapplication.AdvanceViewPagerActivity;
+import com.example.chemlleijoseph.myapplication.AnimationActivity;
+import com.example.chemlleijoseph.myapplication.AnimatorActivity;
 import com.example.chemlleijoseph.myapplication.DialogActivity;
+import com.example.chemlleijoseph.myapplication.GestureActivity;
+import com.example.chemlleijoseph.myapplication.HandlerActivity;
 import com.example.chemlleijoseph.myapplication.IntentAndBundleActivity;
 import com.example.chemlleijoseph.myapplication.MainListAdapter;
 import com.example.chemlleijoseph.myapplication.NinePatchActivity;
@@ -68,6 +72,10 @@ public class DemoFragment extends Fragment {
         list.add("RadioGroup");
         list.add("CheckBox");
         list.add("Intent & Bundle");
+        list.add("Handler");
+        list.add("Animation");
+        list.add("Animator");
+        list.add("Gesture");
     }
 
     /**
@@ -158,7 +166,24 @@ public class DemoFragment extends Fragment {
                         bundle.putSerializable("Base", newBase);
                         intent9.putExtra("B", bundle);
                         startActivity(intent9);
+                    case 10:
+                        Intent intent10 = new Intent(getActivity(), HandlerActivity.class);
+                        startActivity(intent10);
+                        break;
+                    case 11:
+                        Intent intent11 = new Intent(getActivity(), AnimationActivity.class);
+                        startActivity(intent11);
+                        break;
+                    case 12:
+                        Intent intent12 = new Intent(getActivity(), AnimatorActivity.class);
+                        startActivity(intent12);
+                        break;
+                    case 13:
+                        Intent intent13 = new Intent(getActivity(), GestureActivity.class);
+                        startActivity(intent13);
+                        break;
                         default:
+
                 }
             }
         });
